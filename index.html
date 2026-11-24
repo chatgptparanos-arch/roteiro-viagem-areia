@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Fim de semana em Areia (PB)</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Young+Serif&family=Figtree:wght@400;600&display=swap">
+<style>
+:root{--bg:#e6edeb;--surface:#f5f8f7;--ink:#14201d;--muted:#4b5d58;--green:#1f3b34;--amber:#a8650f;--line:#c3d0cc;--on-green:#f3f7f5;
+box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#101a18;--surface:#17251f;--ink:#e8f0ed;--muted:#a2b5af;--green:#0c1613;--amber:#e0a04a;--line:#2b3d37;--on-green:#e8f0ed;color-scheme:dark}}
+:root[data-theme="dark"]{--bg:#101a18;--surface:#17251f;--ink:#e8f0ed;--muted:#a2b5af;--green:#0c1613;--amber:#e0a04a;--line:#2b3d37;--on-green:#e8f0ed;color-scheme:dark}
+html{scroll-padding-top:env(safe-area-inset-top,0px)}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font:400 1.05rem/1.55 Figtree,system-ui,sans-serif}
+header{background:var(--green);color:var(--on-green);padding:3rem 1.25rem 2.5rem}
+.wrap{max-width:42rem;margin:0 auto}
+h1{font:400 clamp(2.2rem,8vw,3.4rem)/1.05 "Young Serif",Georgia,serif;margin:0 0 .75rem}
+header p{margin:0;max-width:34rem;opacity:.9}
+main{padding:2rem 1.25rem 3rem}
+h2{font:400 1.6rem/1.2 "Young Serif",Georgia,serif;margin:2.2rem 0 1rem}
+ol{list-style:none;margin:0;padding:0;border-left:3px solid var(--amber)}
+li{padding:0 0 1.4rem 1.1rem;position:relative}
+li::before{content:"";position:absolute;left:-.55rem;top:.45rem;width:.8rem;height:.8rem;border-radius:50%;background:var(--amber)}
+.time{font-weight:600;color:var(--amber);font-size:.95rem}
+.name{font-weight:600;font-size:1.15rem;display:block}
+.blurb{color:var(--muted);margin:.1rem 0 .4rem}
+a.fotos{display:inline-block;color:var(--ink);font-size:.95rem;font-weight:600;border-bottom:2px solid var(--amber);text-decoration:none;padding:.15rem 0}
+a.fotos:focus-visible{outline:3px solid var(--amber);outline-offset:3px}
+.note{background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:1rem 1.15rem;margin-top:1rem}
+.note h3{margin:0 0 .4rem;font-size:1.05rem}
+.note ul{margin:0;padding-left:1.1rem;color:var(--muted)}
+footer{padding:0 1.25rem 2.5rem;color:var(--muted);font-size:.9rem}
+header{padding-bottom:0}
+header .wrap{padding-bottom:1.2rem}
+.prog{margin:1.1rem 0 0;padding:.8rem 1rem;max-width:22rem;border:2px solid #e0a04a;border-radius:12px;background:rgba(255,255,255,.1);font-weight:600;font-size:1.05rem;color:var(--on-green)}
+.prog b{font-size:1.7rem;color:#f0b866;margin-right:.15rem}
+.bar{height:.65rem;border-radius:99px;background:rgba(255,255,255,.22);margin-top:.55rem;overflow:hidden}
+.bar i{display:block;height:100%;width:0;background:#e0a04a;transition:width .3s}
+@media (prefers-reduced-motion:reduce){.bar i{transition:none}}
+.hero{display:block;width:100%;height:110px;color:var(--on-green)}
+.ico{width:1.25rem;height:1.25rem;vertical-align:-.25rem;margin-right:.45rem;color:var(--amber);fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+.chk{display:flex;width:max-content;align-items:center;gap:.5rem;margin-top:.45rem;font-size:.95rem;color:var(--muted);cursor:pointer}
+.chk input{width:1.2rem;height:1.2rem;accent-color:var(--amber);margin:0}
+li.done .name{color:var(--muted);text-decoration:line-through;text-decoration-thickness:1px}
+.stk{display:inline-grid;place-items:center;width:2.5rem;height:2.5rem;border-radius:50%;background:var(--surface);border:2px solid var(--amber);font-size:1.45rem;line-height:1;margin-right:.6rem;vertical-align:middle;transform:rotate(-7deg)}
+li:nth-child(even) .stk{transform:rotate(6deg)}
+li.done .stk{filter:grayscale(1);opacity:.55}
+li.done::before{background:#3f8f6b}
+</style>
+</head>
+<body>
+<header><div class="wrap">
+<h1>Areia, no alto do Brejo paraibano</h1>
+<p>Fim de semana com duas noites, saindo de Recife no sábado e voltando na segunda de manhã (cerca de 250 km, 4 horas de estrada). Casarões, cachaça, cachoeira e noite fria.</p>
+<div class="prog"><span id="prog" aria-live="polite"></span><div class="bar"><i id="bar"></i></div></div></div>
+<svg class="hero" viewBox="0 0 800 120" preserveAspectRatio="xMidYMax slice" aria-hidden="true"><circle cx="640" cy="46" r="24" fill="#e0a04a"/><path d="M0 70C120 20 220 90 340 55S560 10 680 50S780 40 800 45V120H0Z" fill="currentColor" opacity=".16"/><g fill="currentColor" opacity=".4"><path d="M110 92h46V76l-23-12-23 12z"/><rect x="380" y="58" width="7" height="34"/><rect x="360" y="78" width="46" height="16"/></g><path d="M0 100C150 70 260 110 400 90S650 70 800 95V120H0Z" style="fill:var(--bg)"/></svg></header>
+<main><div class="wrap">
+
+<h2>Sábado</h2>
+<ol>
+<li><span class="time">10h30</span><span class="name">Saída de Recife</span><p class="blurb">Cerca de 4 horas de estrada, com chegada no meio da tarde.</p></li>
+<li><span class="time">14h30</span><span class="name">Centro histórico a pé</span><p class="blurb">Casarão José Rufino, Casa de Pedro Américo e Museu Regional.</p><a class="fotos" href="https://www.google.com/search?tbm=isch&q=Casar%C3%A3o+Jos%C3%A9+Rufino+Areia+PB" target="_blank" rel="noopener">Ver fotos</a></li>
+<li><span class="time">16h30</span><span class="name">Check-in no Airbnb</span><p class="blurb">Combinem o horário de chegada e a entrega das chaves com o anfitrião antes de sair de Recife.</p></li>
+<li><span class="time">17h30</span><span class="name">Teatro Minerva</span><p class="blurb">O primeiro teatro da Paraíba, de 1859.</p><a class="fotos" href="https://www.google.com/search?tbm=isch&q=Teatro+Minerva+Areia+PB" target="_blank" rel="noopener">Ver fotos</a></li>
+<li><span class="time">19h30</span><span class="name">Jantar e vinho</span><p class="blurb">A noite é fria, então levem casaco.</p></li>
+</ol>
+
+<h2>Domingo</h2>
+<ol>
+<li><span class="time">8h</span><span class="name">Café da manhã</span><p class="blurb">Sem pressa, no Airbnb ou numa padaria da cidade.</p></li>
+<li><span class="time">8h45</span><span class="name">Centro de Artesanato de Areia</span><p class="blurb">Cerca de 1 hora para ver rapadura, doces e peças locais.</p></li>
+<li><span class="time">9h45</span><span class="name">Engenho Triunfo</span><p class="blurb">Reservem cerca de 1h45 para a visita guiada e a degustação. Cachaça, chocolate e uma das melhores estruturas do roteiro.</p><a class="fotos" href="https://www.google.com/search?tbm=isch&q=Engenho+Triunfo+Areia+PB" target="_blank" rel="noopener">Ver fotos</a></li>
+<li><span class="time">12h</span><span class="name">Cachoeira do Tauá ou do Gitó</span><p class="blurb">Saindo do engenho às 11h30, contem de 20 a 30 minutos de deslocamento (estimativa) e cerca de 1h30 por lá. Confirmem acesso e se precisa de guia antes de ir.</p><a class="fotos" href="https://www.google.com/search?tbm=isch&q=Cachoeira+do+Tau%C3%A1+Areia+PB" target="_blank" rel="noopener">Fotos do Tauá</a> &nbsp; <a class="fotos" href="https://www.google.com/search?tbm=isch&q=Cachoeira+do+Git%C3%B3+Areia+PB" target="_blank" rel="noopener">Fotos do Gitó</a></li>
+<li><span class="time">13h45</span><span class="name">Almoço no restaurante da Nalva, em Pilões</span><p class="blurb">Comida caseira, a cerca de 30 minutos de Areia (estimativa). O almoço será tarde, então confirmem o horário de funcionamento.</p></li>
+<li><span class="time">15h15</span><span class="name">Centro de Artesanato de Pilões</span><p class="blurb">Cerca de 1 hora, com oficinas para quem quiser participar.</p><a class="fotos" href="https://www.google.com/search?tbm=isch&q=Centro+de+Artesanato+Pil%C3%B5es+PB" target="_blank" rel="noopener">Ver fotos</a></li>
+<li><span class="time">16h30</span><span class="name">Volta para Areia</span><p class="blurb">Cerca de 30 minutos de estrada, chegando antes do pôr do sol.</p></li>
+<li><span class="time">17h</span><span class="name">Tarde livre</span><p class="blurb">Descansem no Airbnb ou vejam o fim de tarde na serra.</p></li>
+<li><span class="time">19h30</span><span class="name">Jantar</span><p class="blurb">Última noite em Areia, então vale um lugar com calma.</p></li>
+</ol>
+
+<h2>Segunda</h2>
+<ol>
+<li><span class="time">7h30</span><span class="name">Café da manhã e check-out do Airbnb</span><p class="blurb">Confirmem com o anfitrião o horário de saída e deixem as malas no carro antes de sair.</p></li>
+<li><span class="time">8h30</span><span class="name">Parque Estadual Mata do Pau-Ferro</span><p class="blurb">De 1h30 a 2 horas de trilha leve, a cerca de 15 minutos do centro (estimativa). Confirmem horário e acesso.</p><a class="fotos" href="https://www.google.com/search?tbm=isch&q=Mata+do+Pau-Ferro+Areia+PB" target="_blank" rel="noopener">Ver fotos</a></li>
+<li><span class="time">10h30</span><span class="name">Lembranças para levar</span><p class="blurb">Cerca de 30 minutos para comprar cachaça, rapadura, doces e artesanato.</p></li>
+<li><span class="time">11h15</span><span class="name">Volta para Recife</span><p class="blurb">Saindo nesse horário, vocês chegam no meio da tarde. A estrada da serra é mais lenta, então contem com um pouco mais de tempo.</p></li>
+</ol>
+
+<div class="note"><h3>Que roupa levar</h3>
+<ul>
+<li>Para o dia: roupa leve e tênis fechado com boa aderência, por causa das ladeiras e calçadas de pedra do centro histórico.</li>
+<li>Para a noite: casaco e calça. Areia fica na serra e esfria bastante.</li>
+<li>Para a cachoeira: roupa de banho, toalha, sandália ou tênis que possa molhar, roupa seca para trocar, protetor solar e repelente.</li>
+<li>Para o engenho: calçado fechado e boné.</li>
+<li>Uma capa de chuva leve por precaução.</li>
+</ul></div>
+
+<div class="note"><h3>Acesso e valores</h3>
+<p class="blurb">Não consegui confirmar os preços de ingresso. Os dados abaixo são o que achei, e podem ter mudado.</p>
+<ul>
+<li>Museu Regional de Areia: funciona de terça a sábado, das 9h às 17h (dado de 2021). Por isso, a visita está no sábado.</li>
+<li>Casa de Pedro Américo, Casarão José Rufino e Teatro Minerva: aparecem com ingresso em passeios guiados, mas não encontrei valor nem horário atual. Perguntem na Secretaria de Turismo de Areia.</li>
+<li>Engenho Triunfo: a entrada é pela Casa do Doce, na PB-079. A visita é guiada, com degustação, em grupos pequenos (até 15 pessoas, segundo um dado de 2022). Confirmem valor e se precisa agendar.</li>
+<li>Cachoeiras do Tauá e do Gitó: não encontrei informação de taxa, trilha ou guia. Peçam orientação ao anfitrião do Airbnb ou a um guia local.</li>
+<li>Levem dinheiro e Pix. O sinal de celular pode falhar em áreas rurais.</li>
+</ul></div>
+
+<div class="note"><h3>Antes de ir</h3>
+<ul>
+<li>Os horários são sugestões. Museus, teatro e engenhos têm horário próprio, e alguns pedem agendamento.</li>
+<li>Se forem provar cachaça, quem dirige fica de fora.</li>
+<li>Na época de chuva, evitem cachoeira com tempo fechado.</li>
+</ul></div>
+
+</div></main>
+<footer><div class="wrap">Roteiro montado com base em fontes de turismo da Paraíba. Confirmem preços, horários e acessos antes da viagem.</div></footer>
+<script>
+(function(){
+var K='areia-visitados-v1',saved=[];
+try{saved=JSON.parse(localStorage.getItem(K)||'[]')||[]}catch(e){saved=[]}
+var I={car:'<path d="M4 17v-4l2-6h12l2 6v4zM4 13h16"/><circle cx="8" cy="17" r="1.3"/><circle cx="16" cy="17" r="1.3"/>',basket:'<path d="M4 9h16l-1.5 10h-13zM8 9l3-5M16 9l-3-5"/>',house:'<path d="M4 20V10l8-6 8 6v10zM10 20v-6h4v6"/>',theater:'<path d="M3 8l9-4 9 4M5 8v10M9 8v10M15 8v10M19 8v10M3 20h18"/>',key:'<circle cx="8" cy="12" r="3.5"/><path d="M11.5 12H21M18 12v3M15 12v2.5"/>',fork:'<path d="M7 3v8M5 3v5a2 2 0 004 0V3M7 11v10M17 3c-2 2-2.5 5-2.5 8H17v10"/>',cup:'<path d="M5 9h11v5a5 5 0 01-5 5h-1a5 5 0 01-5-5zM16 10h2a2.5 2.5 0 010 5h-2"/>',still:'<path d="M10 3h4v4l2 3v10H8V10l2-3zM8 14h8"/>',water:'<path d="M4 4h16M8 4v6M12 4v8M16 4v6M5 20c2-2 4-2 7 0s5 2 7 0"/>',tree:'<path d="M12 3l6 8h-4l5 7H5l5-7H6zM12 18v3"/>',sun:'<circle cx="12" cy="12" r="4"/><path d="M12 3v2M12 19v2M3 12h2M19 12h2M5.6 5.6L7 7M17 17l1.4 1.4M5.6 18.4L7 17M17 7l1.4-1.4"/>'};
+var R=[[/Café/,'cup'],[/Artesanato|Lembranças/,'basket'],[/Casarão|Centro histórico/,'house'],[/Teatro/,'theater'],[/Check-in/,'key'],[/Almoço|Jantar/,'fork'],[/Engenho/,'still'],[/Cachoeira/,'water'],[/Mata/,'tree'],[/Tarde livre/,'sun'],[/Saída|Volta/,'car']];
+var items=[].slice.call(document.querySelectorAll('main ol li'));
+function prog(){var n=items.filter(function(l){return l.classList.contains('done')}).length;document.getElementById('prog').innerHTML='<b>'+n+'</b> de '+items.length+' paradas já visitadas';document.getElementById('bar').style.width=(items.length?Math.round(n*100/items.length):0)+'%'}
+items.forEach(function(li){
+var nm=li.querySelector('.name'),text=nm.textContent,key=li.closest('ol').previousElementSibling.textContent+'|'+text;
+var E=[[/Café/,'☕'],[/Artesanato/,'🧺'],[/Lembranças/,'🛍️'],[/Casarão|Centro histórico/,'🏛️'],[/Teatro/,'🎭'],[/Check-in/,'🔑'],[/Jantar e vinho/,'🍷'],[/Jantar/,'🍽️'],[/Almoço/,'🍲'],[/Engenho/,'🥃'],[/Cachoeira/,'🏞️'],[/Mata/,'🌿'],[/Tarde livre/,'🌅'],[/Saída/,'🚗'],[/Volta para Areia/,'🚙'],[/Volta/,'🚗']];
+for(var i=0;i<E.length;i++){if(E[i][0].test(text)){nm.insertAdjacentHTML('afterbegin','<span class="stk" aria-hidden="true">'+E[i][1]+'</span>');break}}
+var l=document.createElement('label');l.className='chk';var c=document.createElement('input');c.type='checkbox';l.appendChild(c);l.appendChild(document.createTextNode('Já passamos por aqui'));li.appendChild(l);
+if(saved.indexOf(key)>-1){c.checked=true;li.classList.add('done')}
+c.addEventListener('change',function(){li.classList.toggle('done',c.checked);var p=saved.indexOf(key);if(c.checked&&p<0)saved.push(key);if(!c.checked&&p>-1)saved.splice(p,1);try{localStorage.setItem(K,JSON.stringify(saved))}catch(e){}prog()})
+});
+prog();
+})();
+</script>
+</body>
+</html>
